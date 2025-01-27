@@ -59,11 +59,18 @@ This will restart the server on filesystem changes.
 
 ### Running Tests
 
+#### Unit tests
+
 You can run the unit test suite with:
 
 ```bash
 make test
 ```
+
+#### Load tests
+
+See the readme's for running load tests via [k6](./test/load-test/k6/README.md)
+or [locust](./test/load-test/locust/README.md).
 
 ### Building the Playground
 
@@ -139,6 +146,10 @@ Once this is done, you can run `opam update` and `opam upgrade`. If OCamlFormat
 was upgraded in the process, the files `.ocamlformat` and
 `.github/workflows/ci.yml` must be modified with the currently installed version
 of OCamlFormat.
+
+### Handling the Tailwind CSS
+
+The Tailwind CSS framework. The tailwind binary pulled from its GitHub [repo](https://github.com/tailwindlabs/tailwindcss). Download is performed by Dune during the build. When working on a local switch for hacking, you don't want `dune clean` to delete this binary. Just do `dune install tailwind` to have it installed in the local switch.
 
 ## Repository Structure
 
